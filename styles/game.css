@@ -116,7 +116,7 @@ body {
     color: #ff6f91;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
-    animation: bounce 2s ease;
+    animation: fadeIn 2s ease;
 }
 
 .celebration-gif {
