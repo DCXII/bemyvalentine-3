@@ -145,3 +145,28 @@ canvas.addEventListener('mousemove', (e) => {
 canvas.addEventListener('touchmove', (e) => {
     basket.x = e.touches[0].clientX - basket.width / 2;
 });
+
+// Updated Show GIF with Hurray! Function
+function showGifWithHurray() {
+    const gifContainer = document.createElement('div');
+    gifContainer.classList.add('gif-container');
+
+    // Hurray Text
+    const hurrayText = document.createElement('h1');
+    hurrayText.textContent = "Hurray!";
+    hurrayText.classList.add('hurray-text');
+
+    // Celebration GIF
+    const gif = document.createElement('img');
+    gif.src = './assets/images/gi.webp';
+    gif.classList.add('celebration-gif');
+    
+    gifContainer.appendChild(hurrayText);
+    gifContainer.appendChild(gif);
+    document.body.appendChild(gifContainer);
+
+    // Redirect to proposal page after 4 seconds
+    setTimeout(() => {
+        window.location.href = "proposal.html";
+    }, 4000);
+}
