@@ -1,15 +1,14 @@
 body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff6f91 0%, #ff9472 100%);
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 0;
 }
 
 .message-container {
@@ -18,38 +17,51 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    text-align: center;
+    animation: fadeIn 2s ease;
 }
 
 h1 {
+    font-family: 'Dancing Script', cursive;
     font-size: 8vw;
-    color: #ff3d68;
+    color: #ff6f91;
     margin-bottom: 20px;
-    animation: pop 1s ease;
+    animation: popIn 1.5s ease;
 }
 
 p {
     font-size: 4vw;
-    color: #333;
+    color: #555;
     line-height: 1.5;
+    animation: fadeInUp 2s ease;
 }
 
-.gif_container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+strong {
+    color: #ff3d68;
+    font-weight: bold;
+    font-size: 5vw;
 }
 
-.gif_container img {
-    max-width: 80%;
+.romantic-gif {
+    width: 70%;
     border-radius: 20px;
-  /*  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
     animation: bounce 2s infinite;
 }
 
-@keyframes pop {
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes popIn {
     0% { transform: scale(0); }
     100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes bounce {
