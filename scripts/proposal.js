@@ -5,7 +5,7 @@ function acceptProposal() {
 }
 
 function moveNoButton(button) {
-    const container = document.querySelector('.button-container');
+    /*const container = document.querySelector('.button-container');
     const containerRect = container.getBoundingClientRect();
     const buttonRect = button.getBoundingClientRect();
 
@@ -14,7 +14,7 @@ function moveNoButton(button) {
 
     const randomLeft = Math.random() * maxLeft;
     const randomTop = Math.random() * maxTop;
-
+*/
     button.style.position = 'absolute';
     button.style.top = Math.random() * 80 + 'vh';
     button.style.left = Math.random() * 80 + 'vw';
