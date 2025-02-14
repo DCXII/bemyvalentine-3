@@ -121,11 +121,11 @@ function showGifWithHurray() {
     gifContainer.classList.add('gif-container');
 
     const hurrayText = document.createElement('h1');
-    hurrayText.textContent = "Hurray!";
+    hurrayText.textContent = "Hurray!!!";
     hurrayText.classList.add('hurray-text');
 
     const gif = document.createElement('img');
-    gif.src = './assets/images/gi.webp';
+    gif.src = './assets/images/gif.webp';
     gif.classList.add('celebration-gif');
     
     gifContainer.appendChild(hurrayText);
