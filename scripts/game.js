@@ -45,7 +45,7 @@ function runGame() {
     setInterval(updateGame, 20);
 }
 
-function updateGame() {
+/*function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (Math.random() < 0.02) {
@@ -83,7 +83,7 @@ function updateGame() {
     }
 }
 
-
+*/
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
