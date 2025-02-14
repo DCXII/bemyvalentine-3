@@ -59,7 +59,7 @@ function updateGame() {
             document.getElementById('meterFill').style.width = meterValue + '%';
             
             if (meterValue >= 100) {
-                popUpHearts();
+                fadeToWhite();
             }
         }
 
@@ -74,28 +74,30 @@ function updateGame() {
     drawBasket();
 }
 
-function popUpHearts() {
-    for (let i = 0; i < 100; i++) {
-        const popHeart = document.createElement('img');
-        popHeart.src = './assets/images/big-heart.png';
-        popHeart.classList.add('pop-heart');
-        popHeart.style.left = Math.random() * 100 + 'vw';
-        popHeart.style.top = Math.random() * 100 + 'vh';
-        popHeart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
-        document.body.appendChild(popHeart);
-    }
-    showGif();
+function fadeToWhite() {
+    const fadeOverlay = document.createElement('div');
+    fadeOverlay.classList.add('fade-overlay');
+    document.body.appendChild(fadeOverlay);
+
+    setTimeout(() => {
+        showGifWithHurray();
+    }, 1000);
 }
 
-function showGif() {
+function showGifWithHurray() {
     const gifContainer = document.createElement('div');
     gifContainer.classList.add('gif-container');
 
-    const gif = document.createElement('img');
-    gif.src = './assets/images/gip.webp';
-    gif.classList.add('celebration-gif');
-    gifContainer.appendChild(gif);
+    const hurrayText = document.createElement('h1');
+    hurrayText.textContent = "Hurray!";
+    hurrayText.classList.add('hurray-text');
 
+    const gif = document.createElement('img');
+    gif.src = './assets/images/gi.webp';
+    gif.classList.add('celebration-gif');
+    
+    gifContainer.appendChild(hurrayText);
+    gifContainer.appendChild(gif);
     document.body.appendChild(gifContainer);
 
     setTimeout(() => {
