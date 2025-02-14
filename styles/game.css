@@ -93,3 +93,41 @@ body {
 .hidden {
     display: none;
 }
+/* Hurray Text */
+.hurray-text {
+    font-family: 'Roboto';
+    font-size: 10vw;
+    color: #ff6f91;
+    margin-bottom: 20px;
+    animation: popIn 2s ease;
+}
+
+/* Celebration GIF */
+.celebration-gif {
+    max-width: 60vw;
+    max-height: 60vh;
+    border-radius: 20px;
+    animation: popIn 1.5s ease;
+}
+
+/* Centering Container */
+.gif-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    text-align: center;
+}
+
+/* Bounce Animation for Hurray Text */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Pop-In Animation for GIF */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
