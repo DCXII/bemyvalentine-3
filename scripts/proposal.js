@@ -26,4 +26,4 @@ function moveNoButton(button) {
     yesButtonSize += 1;
     const yesButton = document.querySelector('.yes-button');
     yesButton.style.transform = `scale(${yesButtonSize})`;
-}
+}*/
