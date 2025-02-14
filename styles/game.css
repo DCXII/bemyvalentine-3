@@ -77,9 +77,17 @@ body {
     transform: scale(1.05);
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .hidden {
