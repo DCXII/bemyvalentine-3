@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -19,7 +18,7 @@ class Heart {
 
     draw() {
         const img = new Image();
-        img.src = 'assets/images/heart.png';
+        img.src = './assets/images/heart.png';
         ctx.drawImage(img, this.x, this.y, this.width, this.height);
     }
 
@@ -30,7 +29,7 @@ class Heart {
 
 function drawBasket() {
     const img = new Image();
-    img.src = 'assets/images/basket.png';
+    img.src = './assets/images/basket.png';
     ctx.drawImage(img, basket.x, basket.y, basket.width, basket.height);
 }
 
@@ -60,15 +59,13 @@ function updateGame() {
             document.getElementById('meterFill').style.width = meterValue + '%';
             
             if (meterValue >= 100) {
-                setTimeout(() => {
-                    window.location.href = "proposal.html";
-                }, 1000);
+                popUpHearts();
             }
         }
 
         if (heart.y > canvas.height) {
             hearts.splice(index, 1);
-            meterValue -= 5;
+            meterValue -= 20;
             if (meterValue < 0) meterValue = 0;
             document.getElementById('meterFill').style.width = meterValue + '%';
         }
@@ -77,6 +74,27 @@ function updateGame() {
     drawBasket();
 }
 
+function popUpHearts() {
+    for (let i = 0; i < 100; i++) {
+        const popHeart = document.createElement('img');
+        popHeart.src = './assets/images/big-heart.png';
+        popHeart.classList.add('pop-heart');
+        popHeart.style.left = Math.random() * 100 + 'vw';
+        popHeart.style.top = Math.random() * 100 + 'vh';
+        popHeart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+        document.body.appendChild(popHeart);
+    }
+    setTimeout(() => {
+        window.location.href = "proposal.html";
+    }, 3000);
+}
+
 canvas.addEventListener('mousemove', (e) => {
     basket.x = e.clientX - basket.width / 2;
 });
+
+canvas.addEventListener('touchmove', (e) => {
+    basket.x = e.touches[0].clientX - basket.width / 2;
+});
+
+startGame();
