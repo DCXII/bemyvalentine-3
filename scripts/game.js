@@ -33,10 +33,6 @@ function drawBasket() {
     ctx.drawImage(img, basket.x, basket.y, basket.width, basket.height);
 }
 
-function startGame() {
-    setInterval(updateGame, 20);
-}
-
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -83,6 +79,7 @@ function fadeToWhite() {
         showGifWithHurray();
     }, 1000);
 }
+
 function startGame() {
     const instructionsPopup = document.getElementById('instructionsPopup');
     instructionsPopup.classList.add('hidden');
