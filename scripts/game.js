@@ -82,3 +82,80 @@ function updateGame() {
         fadeToWhite();
     }
 }
+
+
+function updateGame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (Math.random() < 0.02) {
+        hearts.push(new Heart());
+    }
+
+    hearts.forEach((heart, index) => {
+        heart.update();
+        heart.draw();
+
+        if (
+            heart.x < basket.x + basket.width &&
+            heart.x + heart.width > basket.x &&
+            heart.y < basket.y + basket.height &&
+            heart.y + heart.height > basket.y
+        ) {
+            hearts.splice(index, 1);
+            meterValue += 10;
+            document.getElementById('meterFill').style.width = meterValue + '%';
+            
+            if (meterValue >= 100) {
+                fadeToWhite();
+            }
+        }
+
+        if (heart.y > canvas.height) {
+            hearts.splice(index, 1);
+            meterValue -= 20;
+            if (meterValue < 0) meterValue = 0;
+            document.getElementById('meterFill').style.width = meterValue + '%';
+        }
+    });
+
+    drawBasket();
+}
+
+function fadeToWhite() {
+    const fadeOverlay = document.createElement('div');
+    fadeOverlay.classList.add('fade-overlay');
+    document.body.appendChild(fadeOverlay);
+
+    setTimeout(() => {
+        showGifWithHurray();
+    }, 1000);
+}
+
+function showGifWithHurray() {
+    const gifContainer = document.createElement('div');
+    gifContainer.classList.add('gif-container');
+
+    const hurrayText = document.createElement('h1');
+    hurrayText.textContent = "Hurray!";
+    hurrayText.classList.add('hurray-text');
+
+    const gif = document.createElement('img');
+    gif.src = './assets/images/gi.webp';
+    gif.classList.add('celebration-gif');
+    
+    gifContainer.appendChild(hurrayText);
+    gifContainer.appendChild(gif);
+    document.body.appendChild(gifContainer);
+
+    setTimeout(() => {
+        window.location.href = "proposal.html";
+    }, 4000);
+}
+
+canvas.addEventListener('mousemove', (e) => {
+    basket.x = e.clientX - basket.width / 2;
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    basket.x = e.touches[0].clientX - basket.width / 2;
+});
