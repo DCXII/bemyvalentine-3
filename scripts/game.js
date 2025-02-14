@@ -7,6 +7,7 @@ canvas.height = window.innerHeight;
 let hearts = [];
 let basket = { x: canvas.width / 2 - 50, y: canvas.height - 100, width: 100, height: 50 };
 let meterValue = 0;
+let isMeterFull = false;
 
 // Heart Class for Falling Hearts
 class Heart {
@@ -50,8 +51,6 @@ function runGame() {
 }
 
 // Update Game Function
-   let isMeterFull = false;
-
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -102,9 +101,18 @@ function fadeToWhite() {
     fadeOverlay.classList.add('fade-overlay');
     document.body.appendChild(fadeOverlay);
 
-    setTimeout(() => {
-        showGifWithHurray();
-    }, 1000);
+    // Smooth fade to white using requestAnimationFrame
+    let opacity = 0;
+    function fade() {
+        opacity += 0.02;
+        fadeOverlay.style.opacity = opacity;
+        if (opacity < 1) {
+            requestAnimationFrame(fade);
+        } else {
+            showGifWithHurray();
+        }
+    }
+    fade();
 }
 
 // Show GIF with Hurray! Function
