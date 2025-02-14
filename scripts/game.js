@@ -125,7 +125,7 @@ function showGifWithHurray() {
     hurrayText.classList.add('hurray-text');
 
     const gif = document.createElement('img');
-    gif.src = './assets/images/gif.webp';
+    gif.src = './assets/images/gip.webp';
     gif.classList.add('celebration-gif');
     
     gifContainer.appendChild(hurrayText);
@@ -153,12 +153,12 @@ function showGifWithHurray() {
 
     // Hurray Text
     const hurrayText = document.createElement('h1');
-    hurrayText.textContent = "Hurray!";
+    hurrayText.textContent = "Hurray!!!";
     hurrayText.classList.add('hurray-text');
 
     // Celebration GIF
     const gif = document.createElement('img');
-    gif.src = './assets/images/gi.webp';
+    gif.src = './assets/images/gip.webp';
     gif.classList.add('celebration-gif');
     
     gifContainer.appendChild(hurrayText);
