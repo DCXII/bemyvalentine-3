@@ -84,27 +84,23 @@ function popUpHearts() {
         popHeart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
         document.body.appendChild(popHeart);
     }
-    showMessages();
+    showGif();
 }
 
-function showMessages() {
-    const messages = [
-        "HURRAY!!!",
-        "You caught my heart!"
-    ];
+function showGif() {
+    const gifContainer = document.createElement('div');
+    gifContainer.classList.add('gif-container');
 
-    messages.forEach((msg, index) => {
-        setTimeout(() => {
-            const message = document.createElement('div');
-            message.classList.add('romantic-message');
-            message.textContent = msg;
-            document.body.appendChild(message);
-        }, index * 1500);
-    });
+    const gif = document.createElement('img');
+    gif.src = './assets/images/gip.webp';
+    gif.classList.add('celebration-gif');
+    gifContainer.appendChild(gif);
+
+    document.body.appendChild(gifContainer);
 
     setTimeout(() => {
         window.location.href = "proposal.html";
-    }, messages.length * 1500 + 2000);
+    }, 4000);
 }
 
 canvas.addEventListener('mousemove', (e) => {
