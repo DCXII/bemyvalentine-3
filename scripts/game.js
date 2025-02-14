@@ -84,17 +84,27 @@ function popUpHearts() {
         popHeart.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
         document.body.appendChild(popHeart);
     }
-    setTimeout(() => {
-        window.location.href = "proposal.html";
-    }, 3000);
+    showMessages();
 }
 
-canvas.addEventListener('mousemove', (e) => {
-    basket.x = e.clientX - basket.width / 2;
-});
+function showMessages() {
+    const messages = [
+        "HURRAY!!!",
+        "You caught my heart!"
+    ];
 
-canvas.addEventListener('touchmove', (e) => {
-    basket.x = e.touches[0].clientX - basket.width / 2;
-});
+    messages.forEach((msg, index) => {
+        setTimeout(() => {
+            const message = document.createElement('div');
+            message.classList.add('romantic-message');
+            message.textContent = msg;
+            document.body.appendChild(message);
+        }, index * 1500);
+    });
 
-startGame();
+    setTimeout(() => {
+        window.location.href = "proposal.html";
+    }, messages.length * 1500 + 2000);
+}
+
+canvas.add
