@@ -89,14 +89,6 @@ body {
         opacity: 1;
     }
 }
-.gif-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    animation: fadeInBounce 1.5s ease forwards;
-}
 .fade-overlay {
     position: fixed;
     top: 0;
@@ -132,7 +124,7 @@ body {
     max-height: 60vh;
     border-radius: 20px;
   /*  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)*/
-    animation: pop 1.5s ease;
+    animation: fadeIn 1.5s ease;
 }
 
 @keyframes fadeIn {
@@ -148,13 +140,6 @@ body {
 @keyframes pop {
     0% { transform: scale(0); }
     100% { transform: scale(1); }
-}
-.celebration-gif {
-    max-width: 80vw;
-    max-height: 80vh;
-  /*  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
-    border-radius: 20px;
-    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
