@@ -22,7 +22,7 @@ function moveNoButton(button) {
     growYesButton();
 }
 
-function growYesButton() {
+/*function growYesButton() {
     yesButtonSize += 1;
     const yesButton = document.querySelector('.yes-button');
     yesButton.style.transform = `scale(${yesButtonSize})`;
