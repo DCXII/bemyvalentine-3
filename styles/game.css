@@ -95,7 +95,7 @@ body {
 }
 /* Hurray Text */
 .hurray-text {
-    font-family: 'Roboto';
+    font-family: 'Roboto', bold;
     font-size: 10vw;
     color: #ff6f91;
     margin-bottom: 20px;
@@ -128,6 +128,6 @@ body {
 
 /* Pop-In Animation for GIF */
 @keyframes popIn {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {opacity: 0; }
+    100% { opacity: 1; }
 }
