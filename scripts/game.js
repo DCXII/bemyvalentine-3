@@ -107,4 +107,12 @@ function showMessages() {
     }, messages.length * 1500 + 2000);
 }
 
-canvas.add
+canvas.addEventListener('mousemove', (e) => {
+    basket.x = e.clientX - basket.width / 2;
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    basket.x = e.touches[0].clientX - basket.width / 2;
+});
+
+startGame();
