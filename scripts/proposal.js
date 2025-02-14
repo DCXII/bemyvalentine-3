@@ -8,7 +8,7 @@ function moveNoButton(button) {
     // Get button dimensions
     const buttonRect = button.getBoundingClientRect();
 
-    // Calculate max boundaries relative to the viewport
+    // Calculate max boundaries relative to the viewport, considering button size
     const maxLeft = Math.max(0, window.innerWidth - buttonRect.width);
     const maxTop = Math.max(0, window.innerHeight - buttonRect.height);
 
@@ -20,6 +20,10 @@ function moveNoButton(button) {
     button.style.position = 'fixed';
     button.style.left = randomLeft + 'px';
     button.style.top = randomTop + 'px';
+
+    // Ensure the button stays on top
+    button.style.zIndex = '999';
+    button.style.transition = 'top 0.3s ease, left 0.3s ease';
 
     growYesButton();
 }
