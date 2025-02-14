@@ -83,7 +83,15 @@ function fadeToWhite() {
         showGifWithHurray();
     }, 1000);
 }
+function startGame() {
+    const instructionsPopup = document.getElementById('instructionsPopup');
+    instructionsPopup.classList.add('hidden');
+    runGame();
+}
 
+function runGame() {
+    setInterval(updateGame, 20);
+}
 function showGifWithHurray() {
     const gifContainer = document.createElement('div');
     gifContainer.classList.add('gif-container');
