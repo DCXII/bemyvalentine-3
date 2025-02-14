@@ -97,11 +97,62 @@ body {
     z-index: 999;
     animation: fadeInBounce 1.5s ease forwards;
 }
+.fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    z-index: 10;
+}
 
+.gif-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    text-align: center;
+}
+
+.hurray-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 10vw;
+    color: #ff6f91;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.celebration-gif {
+    max-width: 60vw;
+    max-height: 60vh;
+    border-radius: 20px;
+  /*  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)*/
+    animation: pop 1.5s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
 .celebration-gif {
     max-width: 80vw;
     max-height: 80vh;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  /*  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
     border-radius: 20px;
     animation: bounce 2s infinite;
 }
