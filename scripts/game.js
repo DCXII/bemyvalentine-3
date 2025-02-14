@@ -50,6 +50,8 @@ function runGame() {
 }
 
 // Update Game Function
+   let isMeterFull = false;
+
 function updateGame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -73,10 +75,6 @@ function updateGame() {
             hearts.splice(index, 1);
             meterValue += 10;
             document.getElementById('meterFill').style.width = meterValue + '%';
-            
-            if (meterValue >= 100) {
-                fadeToWhite();
-            }
         }
 
         // Check if Heart is Missed
@@ -90,6 +88,12 @@ function updateGame() {
 
     // Draw Basket
     drawBasket();
+
+    // Check if Meter is Full and Trigger Fade
+    if (meterValue >= 100 && !isMeterFull) {
+        isMeterFull = true;
+        fadeToWhite();
+    }
 }
 
 // Fade to White Function
