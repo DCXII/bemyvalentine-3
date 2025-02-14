@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff6f91 0%, #ff9472 100%);
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
     text-align: center;
@@ -25,20 +25,19 @@ h1 {
     font-size: 8vw;
     color: #ff3d68;
     margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
     animation: pop 1s ease;
 }
 
-.gif_container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.romantic-gif {
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
 }
 
-.gif_container img {
-    max-width: 80%;
-    border-radius: 20px;
- /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-    animation: bounce 2s infinite;
+.button-container {
+    margin-top: 20px;
 }
 
 .yes-button, .no-button {
@@ -70,14 +69,19 @@ h1 {
 .yes-button:hover {
     background-color: #ff3d68;
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes pop {
     0% { transform: scale(0); }
     100% { transform: scale(1); }
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
 }
